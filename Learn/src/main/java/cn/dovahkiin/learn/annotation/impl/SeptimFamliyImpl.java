@@ -22,8 +22,6 @@ public class SeptimFamliyImpl implements ConstraintValidator<SeptimFamliy,Object
                 if(!checkValue(str))return false;
             }
         }
-
-
         return true;
     }
     private boolean checkValue(String value){

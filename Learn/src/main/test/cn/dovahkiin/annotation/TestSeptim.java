@@ -1,5 +1,6 @@
 package cn.dovahkiin.annotation;
 
+import cn.dovahkiin.learn.Util.ValidUtils;
 import cn.dovahkiin.learn.bean.Dovahkiin;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -28,13 +29,15 @@ public class TestSeptim {
     public void testValid(){
 
         Dovahkiin dovahkiin = new Dovahkiin();
-
-        Set<ConstraintViolation<Dovahkiin>> ss= validator.validate(dovahkiin);
-        logger.info(dovahkiin);
-        logger.info(ss.size());
-        for (ConstraintViolation s :ss
-             ) {
-            System.out.println(s.getPropertyPath() + " " + s.getMessage());
-        }
+        dovahkiin.setName("泰罗斯");
+//        Set<ConstraintViolation<Object>> ss= validator.validate(dovahkiin);
+//        logger.info(dovahkiin);
+//        logger.info(ss.size());
+//        for (ConstraintViolation s :ss
+//             ) {
+//            System.out.println(s.getPropertyPath() + " " + s.getMessage());
+//        }
+        boolean v=ValidUtils.checkTask(dovahkiin);
+        logger.info("校验"+v);
     }
 }
